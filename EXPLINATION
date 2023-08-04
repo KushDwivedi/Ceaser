@@ -1,0 +1,25 @@
+This is the explaniation of only lower case letters
+shift = 26 - 7:
+This calculates the shift for the Caesar cipher, where 7 is the number of positions to shift the letters. The modulus operation % 26 ensures that the shift value wraps around within the alphabet's length.
+alphabet = string.ascii_lowercase: 
+This gets the lowercase alphabet string.
+shifted = alphabet[shift:] + alphabet[:shift]: 
+This creates a shifted alphabet by concatenating the part of the alphabet after the shift point with the part before the shift point.
+table = str.maketrans(alphabet, shifted): 
+This creates a translation table for the str.translate() method, mapping each character from the original alphabet to the shifted alphabet.
+encrypted = plain_text.translate(table): 
+This applies the translation table to the plain_text, effectively encrypting it using the Caesar cipher.
+Finally, the encrypted text is printed.
+
+
+
+NOW THE BELOW EXPLINATION IS FOR EVERY LETTER
+The ceasar() function takes the text to be encrypted, a shift value, and a list of alphabets (lowercase letters, uppercase letters, and punctuation) as parameters.
+shift_alphabet(alphabet) is a helper function that shifts a given alphabet based on the shift value.
+shift_alphabet = tuple(map(shift_alphabet, alphabets)) applies the shift_alphabet function to each alphabet (lowercase, uppercase, punctuation) and stores the results in a tuple.
+final_alphabet is a concatenated string of all the alphabets.
+final_shifted_alphabet is a concatenated string of the shifted versions of the alphabets.
+table = str.maketrans(final_alphabet, final_shifted_alphabet) creates the translation table as before.
+return text.translate(table) applies the translation table to the input text.
+The plain_text is passed to the ceasar() function, along with a shift value of 7 and a list of lowercase letters, uppercase letters, and punctuation. The encrypted text is printed.
+Both blocks of code demonstrate Caesar cipher encryption, but the second block is more versatile as it handles multiple sets of characters (lowercase, uppercase, punctuation) simultaneously.
